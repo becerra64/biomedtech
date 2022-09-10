@@ -1,4 +1,5 @@
 package com.example.biomedtech.databasemodule;
+import java.sql.DriverManager;
 
 public final class DataBaseHelper {
 
