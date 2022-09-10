@@ -3,7 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Latitude/Desktop/BioMedTech/app/src/main/res/layout/activity_main.xml" value="0.2869791666666667" />
+        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable/Botton.xml" value="0.1" />
+        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable/border_bottom.xml" value="0.1" />
+        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable/border_center.xml" value="0.1" />
+        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable/border_top.xml" value="0.1" />
+        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable/bottom.xml" value="0.1" />
+        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/layout/activity_dash_board.xml" value="0.2359375" />
+        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/layout/activity_sing_up.xml" value="0.264" />
       </map>
     </option>
   </component>
