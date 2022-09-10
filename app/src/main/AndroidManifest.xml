@@ -24,10 +24,6 @@
             android:name=".SingUpActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.login.SingUpActivity"
-            android:exported="false"
-            android:label="@string/title_activity_sing_up" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
