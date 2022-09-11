@@ -52,7 +52,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
         void bindData(final GlucoseLevel item){
             number.setText(Long.toString(item.getEgvs().get(0).getValue()));
-            hour.setText(Double.toString(item.getEgvs().get(0).getTrendRate()));
+            hour.setText(Double.toString(item.getEgvs().get(0).getRealtimeValue()));
             color1.setBackgroundColor(1);
         }
     }
