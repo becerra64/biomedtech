@@ -51,69 +51,28 @@
                         android:paddingTop="2dp"
                         android:paddingRight="20dp"
                         android:paddingBottom="2dp"
-                        android:text="BioMedTech"
+                        android:text="GLU Helper"
                         android:textColor="#000000" />
                 </LinearLayout>
 
             </LinearLayout>
+
         </FrameLayout>
     </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="3"
         android:orientation="vertical">
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="12dp">
+            android:layout_height="match_parent"
+            android:layout_weight="7">
 
-            <EditText
-                android:id="@+id/emailEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_top"
-                android:ems="10"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:padding="15dp"
-                tools:ignore="TouchTargetSizeCheck" />
-
-            <EditText
-                android:id="@+id/passwordEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border_bottom"
-                android:ems="10"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:padding="15dp"
-                tools:ignore="TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/loginButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/bottom"
-                android:backgroundTint="@color/colorPrimary"
-                android:onClick="login"
-                android:text="Login" />
-
-            <TextView
-                android:id="@+id/olvide_contra"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:onClick="resetPassword"
-                android:text="Forget password"
-                android:textAlignment="center"
-                android:textAllCaps="false" />
-        </LinearLayout>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <Button
             android:id="@+id/googleSign"
             android:layout_width="match_parent"
@@ -123,25 +82,25 @@
             android:drawableStart="@drawable/gogo"
             android:text="Sign in with Google"
             android:textAlignment="center"
+            android:gravity="center"
             android:textColor="#000000"
             app:iconGravity="end" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="bottom"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="15dp">
+            android:padding="12dp"/>
+        <TextView
+            android:id="@+id/registerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:onClick="createAccount"
+            android:text="Create an account"
+            android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/registerTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="25dp"
-                android:onClick="createAccount"
-                android:text="Create an account"
-                android:textAlignment="center" />
-        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>
