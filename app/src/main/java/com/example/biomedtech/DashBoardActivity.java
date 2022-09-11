@@ -11,6 +11,10 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.biomedtech.databinding.ActivityDashBoard1Binding;
+import com.example.biomedtech.dexcomAPI.*;
+
+import okhttp3.OkHttp;
+import okhttp3.Response;
 
 public class DashBoardActivity extends AppCompatActivity {
 
@@ -32,6 +36,11 @@ public class DashBoardActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_dash_board1);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        DexcomAPIHelper dexcomAPIHelper = new DexcomAPIHelper();
+        GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
     }
+
+
 
 }

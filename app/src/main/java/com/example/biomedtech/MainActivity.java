@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("new api")
     public void login(View view) {
-//        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//        StrictMode.setThreadPolicy(policy);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 //        DataBaseHelper DBH = DataBaseHelper.getInstance();
 //        DBH.connect();
 
