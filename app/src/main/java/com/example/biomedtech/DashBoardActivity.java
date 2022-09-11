@@ -29,6 +29,12 @@ public class DashBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dash_board);
         GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
         init(glucoseLevels);
+        appendLevel();
+    }
+
+    public void appendLevel()
+    {
+        glucoseLevels.add(new ConsumeAPI().doInBackground(dexcomAPIHelper));
     }
 
     public void init(List<GlucoseLevel> list){
