@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         //DataBaseHelper dbh = DataBaseHelper.getInstance();
         //dbh.connect();
-
+        // random
 
     }
 
