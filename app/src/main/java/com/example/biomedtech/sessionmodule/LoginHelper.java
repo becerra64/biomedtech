@@ -1,9 +1,12 @@
 package com.example.biomedtech.sessionmodule;
 
+import android.content.SharedPreferences;
+
 enum LoginResult
 {
     LOGIN_SUCCESSFUL,
-    LOGIN_FAILED
+    LOGIN_FAILED,
+    GOOGLE
 }
 
 public class LoginHelper {

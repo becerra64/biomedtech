@@ -33,9 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i = new Intent(this, DashBoardActivity.class);
         startActivity(i);
+
     }
 
-    public void resetPassword(View view) {
+    public void resetPassword(View view)
+    {
+
     }
 
     public void createAccount(View view)
