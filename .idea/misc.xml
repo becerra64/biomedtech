@@ -3,16 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable/Botton.xml" value="0.1" />
-        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable/border_bottom.xml" value="0.1" />
-        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable/border_center.xml" value="0.1" />
-        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable/border_top.xml" value="0.1" />
-        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable/bottom.xml" value="0.1" />
-        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/layout/activity_dash_board.xml" value="0.2359375" />
-        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Hackaton/biomedtech/app/src/main/res/layout/activity_sing_up.xml" value="0.264" />
+        <entry key="..\:/Users/Latitude/Desktop/BioMedTech/app/src/main/res/layout/activity_dash_board.xml" value="0.29583333333333334" />
+        <entry key="..\:/Users/Latitude/Desktop/BioMedTech/app/src/main/res/layout/activity_dash_board1.xml" value="0.371875" />
+        <entry key="..\:/Users/Latitude/Desktop/BioMedTech/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Latitude/Desktop/BioMedTech/app/src/main/res/layout/activity_sing_up.xml" value="0.5" />
+        <entry key="..\:/Users/Latitude/Desktop/BioMedTech/app/src/main/res/layout/fragment_dashboard.xml" value="0.32395833333333335" />
+        <entry key="..\:/Users/Latitude/Desktop/BioMedTech/app/src/main/res/layout/fragment_home.xml" value="0.32395833333333335" />
+        <entry key="..\:/Users/Latitude/Desktop/BioMedTech/app/src/main/res/layout/fragment_notifications.xml" value="0.32395833333333335" />
+        <entry key="..\:/Users/Latitude/Desktop/BioMedTech/app/src/main/res/layout/fragment_settings.xml" value="0.1921875" />
+        <entry key="..\:/Users/Latitude/Desktop/BioMedTech/app/src/main/res/menu/bottom_nav_menu.xml" value="0.32395833333333335" />
       </map>
     </option>
   </component>
