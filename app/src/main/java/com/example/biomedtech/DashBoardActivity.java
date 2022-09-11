@@ -1,6 +1,7 @@
 package com.example.biomedtech;
 
 import android.os.Bundle;
+import android.widget.ListAdapter;
 import android.os.Handler;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -25,8 +26,6 @@ public class DashBoardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        DexcomAPIHelper dexcomAPIHelper = DexcomAPIHelper.getInstance();
-
         binding = ActivityDashBoard1Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -40,7 +39,16 @@ public class DashBoardActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
+        //DexcomAPIHelper dexcomAPIHelper = new DexcomAPIHelper();
+        //GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
+    }
+
+    public void init(List<GlucoseLevel> list){
+        ItemAdapter listAdapter = new ItemAdapter(list, this);
+        RecyclerView recyclerView = findViewById(R.id.listRecycler);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(listAdapter);
     }
 
     private void consumeAPI() {
@@ -60,10 +68,5 @@ public class DashBoardActivity extends AppCompatActivity {
         }, 1000 * 60 * 5);
     }
 
-    public void appendGlucoseLevel(GlucoseLevel gl)
-    {
-        // magia del abner
-
-    }
 
 }
