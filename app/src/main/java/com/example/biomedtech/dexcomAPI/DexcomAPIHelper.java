@@ -1,6 +1,15 @@
 package com.example.biomedtech.dexcomAPI;
+import java.util.Random;
+
+import android.content.Intent;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import java.io.IOException;
+import java.sql.Time;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatterBuilder;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -55,11 +64,13 @@ public class DexcomAPIHelper {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public String egvRequest(String token){
         OkHttpClient client = new OkHttpClient();
-
+        Random ran = new Random();
+        int rand = ran.nextInt(20);
         Request request = new Request.Builder()
-                .url("https://sandbox-api.dexcom.com/v2/users/self/egvs?startDate=2022-06-16T15:30:00&endDate=2022-06-16T15:45:00")
+                .url("https://sandbox-api.dexcom.com/v2/users/self/egvs?startDate=2022-06-16T+ " + Integer.toString(rand ) +"+:30:00&endDate=2022-06-16T+ \" + Integer.toString(rand ) +\"+:45:00")
                 .get()
                 .addHeader("authorization", "Bearer " + token)
                 .build();

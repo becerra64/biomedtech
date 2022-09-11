@@ -51,6 +51,11 @@ public class DashBoardActivity extends AppCompatActivity {
         GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
         init(glucoseLevels);
         appendLevel();
+        appendLevel();
+        appendLevel();
+        appendLevel();
+        appendLevel();
+        appendLevel();
     }
 
     public void appendLevel()
@@ -86,4 +91,5 @@ public class DashBoardActivity extends AppCompatActivity {
             return g;
         }
     }
+
 }
