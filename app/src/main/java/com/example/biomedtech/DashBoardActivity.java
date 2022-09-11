@@ -11,9 +11,13 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.biomedtech.databinding.ActivityDashBoard1Binding;
 import com.example.biomedtech.dexcomAPI.*;
+
+import java.util.List;
 
 import okhttp3.OkHttp;
 import okhttp3.Response;
@@ -66,6 +70,11 @@ public class DashBoardActivity extends AppCompatActivity {
                 });
             }
         }, 1000 * 60 * 5);
+    }
+
+    public void appendGlucoseLevel(GlucoseLevel gl)
+    {
+
     }
 
 
