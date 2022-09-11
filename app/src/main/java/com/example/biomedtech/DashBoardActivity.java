@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.biomedtech.databasemodule.DataBaseHelper;
 import com.example.biomedtech.dexcomAPI.DexcomAPIHelper;
 import com.example.biomedtech.dexcomAPI.DexconAuthStructure;
 import com.example.biomedtech.dexcomAPI.Egv;
@@ -31,6 +32,8 @@ import com.example.biomedtech.dexcomAPI.GlucoseLevel;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -47,6 +50,11 @@ public class DashBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dash_board);
         GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
         init(glucoseLevels);
+        appendLevel();
+        appendLevel();
+        appendLevel();
+        appendLevel();
+        appendLevel();
         appendLevel();
     }
 
@@ -68,10 +76,10 @@ public class DashBoardActivity extends AppCompatActivity {
         handler.postDelayed(runnable = new Runnable() {
             @Override
             public void run() {
-                handler.postDelayed(runnable, 1000 * 60 * 5);
+                handler.postDelayed(runnable, 1000);
                 glucoseLevels.add(new ConsumeAPI().doInBackground(dexcomAPIHelper));
             }
-        }, 1000 * 60 * 5);
+        }, 1000);
         super.onResume();
     }
 
@@ -83,4 +91,5 @@ public class DashBoardActivity extends AppCompatActivity {
             return g;
         }
     }
+
 }

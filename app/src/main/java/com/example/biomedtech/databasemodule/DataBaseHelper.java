@@ -1,6 +1,7 @@
 package com.example.biomedtech.databasemodule;
 import java.sql.DriverManager;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ConcurrentModificationException;
@@ -36,6 +37,18 @@ public final class DataBaseHelper {
         catch (Exception e)
         {
             e.printStackTrace();
+        }
+    }
+
+    public ResultSet execSP(String query){
+        try {
+            Class.forName("net.sourceforge.jtds.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(ConnectionString());
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            return  rs;
+        } catch (Exception e) {
+            return null;
         }
     }
 
