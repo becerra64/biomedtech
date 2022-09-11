@@ -1,6 +1,7 @@
 package com.example.biomedtech;
 
 import android.os.Bundle;
+import android.os.Handler;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -24,6 +25,8 @@ public class DashBoardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        DexcomAPIHelper dexcomAPIHelper = DexcomAPIHelper.getInstance();
+
         binding = ActivityDashBoard1Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -37,10 +40,30 @@ public class DashBoardActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        //DexcomAPIHelper dexcomAPIHelper = new DexcomAPIHelper();
-        //GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
+        GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
     }
 
+    private void consumeAPI() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        DexcomAPIHelper dexcomAPIHelper = DexcomAPIHelper.getInstance();
+                        GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
+                        appendGlucoseLevel(glucoseLevel);
+                    }
+                });
+            }
+        }, 1000 * 60 * 5);
+    }
 
+    public void appendGlucoseLevel(GlucoseLevel gl)
+    {
+        // magia del abner
+
+    }
 
 }

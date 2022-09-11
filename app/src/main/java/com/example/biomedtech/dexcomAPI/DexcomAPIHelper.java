@@ -9,6 +9,25 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class DexcomAPIHelper {
+    private DexcomAPIHelper(){}
+    private static volatile DexcomAPIHelper instance;
+    public static DexcomAPIHelper getInstance()
+    {
+        DexcomAPIHelper result= instance;
+        if(result != null)
+        {
+            return result;
+        }
+        synchronized (DexcomAPIHelper.class)
+        {
+            if(instance == null)
+            {
+                instance = new DexcomAPIHelper();
+            }
+            return instance;
+        }
+    }
+
     public String tokenCreator()
     {
         OkHttpClient client = new OkHttpClient();
@@ -40,7 +59,7 @@ public class DexcomAPIHelper {
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
-                .url("https://api.dexcom.com/v2/users/self/egvs?startDate=2017-06-16T15:30:00&endDate=2017-06-16T15:45:00")
+                .url("https://sandbox-api.dexcom.com/v2/users/self/egvs?startDate=2017-06-16T15:30:00&endDate=2017-06-16T15:45:00")
                 .get()
                 .addHeader("authorization", "Bearer" + token)
                 .build();
