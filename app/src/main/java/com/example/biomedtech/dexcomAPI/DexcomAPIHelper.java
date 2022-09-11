@@ -64,13 +64,40 @@ public class DexcomAPIHelper {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public String egvRequest(String token){
         OkHttpClient client = new OkHttpClient();
         Random ran = new Random();
-        int rand = ran.nextInt(20);
+        int rand = ran.nextInt(6);
+        String hourstr = "10";
+        switch (rand)
+        {
+            case 0:
+                hourstr = "13";
+                break;
+            case 1:
+                hourstr = "12";
+                break;
+            case 2:
+                hourstr = "14";
+                break;
+            case 3:
+                hourstr = "15";
+                break;
+            case 4:
+                hourstr = "16";
+                break;
+            case 5:
+                hourstr = "17";
+                break;
+            case 6:
+                hourstr = "18";
+                break;
+            case 7:
+                hourstr = "19";
+                break;
+        }
         Request request = new Request.Builder()
-                .url("https://sandbox-api.dexcom.com/v2/users/self/egvs?startDate=2022-06-16T+ " + Integer.toString(rand ) +"+:30:00&endDate=2022-06-16T+ \" + Integer.toString(rand ) +\"+:45:00")
+                .url("https://sandbox-api.dexcom.com/v2/users/self/egvs?startDate=2022-06-16T" + hourstr +":30:00&endDate=2022-06-16T"+ hourstr +":45:00")
                 .get()
                 .addHeader("authorization", "Bearer " + token)
                 .build();
