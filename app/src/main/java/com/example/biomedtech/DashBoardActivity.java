@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.biomedtech.dexcomAPI.DexcomAPIHelper;
+import com.example.biomedtech.dexcomAPI.DexconAuthStructure;
+import com.example.biomedtech.dexcomAPI.Egv;
 import com.example.biomedtech.dexcomAPI.GlucoseLevel;
 
 import java.util.ArrayList;
@@ -16,17 +19,15 @@ import java.util.List;
 public class DashBoardActivity extends AppCompatActivity {
 
     List<GlucoseLevel> glucoseLevels = new ArrayList<>();
+    DexcomAPIHelper dexcomAPIHelper = DexcomAPIHelper.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
-
+        GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
         init(glucoseLevels);
-        consumeAPI();
-        consumeAPI();
-        consumeAPI();
-        consumeAPI();
+        generateLog();
     }
 
     public void init(List<GlucoseLevel> list){
@@ -37,25 +38,23 @@ public class DashBoardActivity extends AppCompatActivity {
         recyclerView.setAdapter(listAdapter);
     }
 
-    private void consumeAPI() {
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        DexcomAPIHelper dexcomAPIHelper = DexcomAPIHelper.getInstance();
-                        GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
-                        appendGlucoseLevel(glucoseLevel);
-                    }
-                });
-            }
-        }, 1000);
+    public void generateLog()
+    {
+        GlucoseLevel s = new ConsumeAPI().doInBackground(dexcomAPIHelper);
+        appendGlucoseLevel(s);
     }
 
     public void appendGlucoseLevel(GlucoseLevel gl)
     {
         glucoseLevels.add(gl);
+    }
+
+    private class ConsumeAPI extends AsyncTask<DexcomAPIHelper, Void, GlucoseLevel>
+    {
+        @Override
+        protected GlucoseLevel doInBackground(DexcomAPIHelper... apiHelper) {
+            GlucoseLevel g = apiHelper[0].getGlucoseMeasure();
+            return g;
+        }
     }
 }

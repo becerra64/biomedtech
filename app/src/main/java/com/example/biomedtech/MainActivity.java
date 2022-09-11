@@ -53,9 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 signIn();
             }
         });
-
-
-
     }
 
     void signIn(){
