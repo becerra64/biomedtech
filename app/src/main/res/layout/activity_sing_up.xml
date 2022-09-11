@@ -85,12 +85,12 @@
                         android:text="Basic information"/>
 
                     <EditText
-                        android:id="@+id/firstName"
+                        android:id="@+id/fullname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/border_top"
                         android:ems="10"
-                        android:hint="first name"
+                        android:hint="full name"
                         android:inputType="text"
                         android:layout_marginVertical="5dp"
                         android:padding="15dp" />
@@ -132,7 +132,7 @@
                         android:id="@+id/suffix"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/border_bottom"
+                        android:background="@drawable/border_center"
                         android:ems="10"
                         android:hint="suffix"
                         android:inputType="text"
@@ -143,7 +143,7 @@
                         android:id="@+id/gender"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/border_bottom"
+                        android:background="@drawable/border_center"
                         android:ems="10"
                         android:layout_marginVertical="5dp"
                         android:padding="15dp" />
@@ -156,7 +156,376 @@
                         android:inputType="date"
                         android:focusable="false"
                         android:clickable="true"
-                        android:maxLines="1"/>
+                        android:maxLines="1"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp"/>
+
+                    <Spinner
+                        android:id="@+id/nationality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Address information"/>
+
+                    <Spinner
+                        android:id="@+id/use"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <Spinner
+                        android:id="@+id/type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="address"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="city"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/district"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="district"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="state"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/postalcode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="postal code"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/country"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="country"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Contact information"/>
+
+                    <Spinner
+                        android:id="@+id/system"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/valueSystem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="value"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <Spinner
+                        android:id="@+id/useSystem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/rank"
+                        android:digits="0123456789"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="rank"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Comunication information"/>
+
+                    <Spinner
+                        android:id="@+id/lenguage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Contact information"/>
+
+                    <EditText
+                        android:id="@+id/relationship"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="relationship"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/fullnameContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="full name contact"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/surnameContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="surname contact"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/givenContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="given contact"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/prefixContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="prefix contact"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/suffixContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="suffix contact"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+
+                    <Spinner
+                        android:id="@+id/systemContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/valueSystemContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="value contact"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <Spinner
+                        android:id="@+id/useSystemContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/rankContact"
+                        android:digits="0123456789"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="rank contact"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <Spinner
+                        android:id="@+id/useAddressContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <Spinner
+                        android:id="@+id/typeContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/addressContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="address contact"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/cityContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="city contact"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/districtContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="district contact"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/stateContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="state contact"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/postalcodeContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="postal code contact"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <EditText
+                        android:id="@+id/countryContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_center"
+                        android:ems="10"
+                        android:hint="country contact"
+                        android:inputType="text"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
+                    <Spinner
+                        android:id="@+id/genderContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_bottom"
+                        android:ems="10"
+                        android:layout_marginVertical="5dp"
+                        android:padding="15dp" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -178,7 +547,7 @@
                             android:layout_marginTop="15dp"
                             android:background="@drawable/bottom"
                             android:backgroundTint="@color/colorPrimary"
-                            android:text="Register" />
+                            android:text="Next" />
 
                         <TextView
                             android:id="@+id/textView8"
