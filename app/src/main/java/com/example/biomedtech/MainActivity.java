@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         if(acct!=null){
             navigateToSecondActivity();
         }
-        navigateToSecondActivity();
+        //navigateToSecondActivity();
 
 
         googleBtn.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         finish();
         Intent intent = new Intent(MainActivity.this, DashBoardActivity.class);
         startActivity(intent);
+        Toast.makeText(getApplicationContext(), "Login Successful ", Toast.LENGTH_SHORT).show();
     }
 
     @SuppressLint("new api")
