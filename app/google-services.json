@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "188054948219",
+    "project_id": "hackaton-3a420",
+    "storage_bucket": "hackaton-3a420.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188054948219:android:fc3a670f1b50bbb361d5de",
+        "android_client_info": {
+          "package_name": "com.example.biomedtech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188054948219-rbfbmv6ec1b3695t1dojr48ajqceoa3j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.biomedtech",
+            "certificate_hash": "012dcaf17c345f8c5c0b4139a053e7bd955b3363"
+          }
+        },
+        {
+          "client_id": "188054948219-4nppiq20mf2047iuqhj434pthinuo1jd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABzKrz-4_7e-z830U2h49C3VYrGds6Z7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "188054948219-31matlold6qajei56a7a8k7cjogcqhe6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

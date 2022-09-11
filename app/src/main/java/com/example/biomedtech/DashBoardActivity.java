@@ -37,8 +37,8 @@ public class DashBoardActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        DexcomAPIHelper dexcomAPIHelper = new DexcomAPIHelper();
-        GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
+        //DexcomAPIHelper dexcomAPIHelper = new DexcomAPIHelper();
+        //GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
     }
 
 

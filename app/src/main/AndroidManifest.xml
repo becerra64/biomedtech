@@ -18,6 +18,9 @@
         android:theme="@style/Theme.BioMedTech"
         tools:targetApi="31">
         <activity
+            android:name=".SecondActivity"
+            android:exported="false" />
+        <activity
             android:name=".DashBoardActivity"
             android:exported="false"
             android:label="@string/title_activity_dash_board" />
