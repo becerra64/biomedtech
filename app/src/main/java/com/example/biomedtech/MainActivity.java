@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         if(acct!=null){
             navigateToSecondActivity();
         }
+        navigateToSecondActivity();
 
 
         googleBtn.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 task.getResult(ApiException.class);
                 navigateToSecondActivity();
             } catch (ApiException e) {
+                e.printStackTrace();
                 Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
             }
         }
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     }
     void navigateToSecondActivity() {
         finish();
-        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        Intent intent = new Intent(MainActivity.this, DashBoardActivity.class);
         startActivity(intent);
     }
 
@@ -89,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
 //        DataBaseHelper DBH = DataBaseHelper.getInstance();
 //        DBH.connect();
 
-        Intent i = new Intent(this, DashBoardActivity.class);
-        startActivity(i);
+        //Intent i = new Intent(this, DashBoardActivity.class);
+        //startActivity(i);
 
     }
 

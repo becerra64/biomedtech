@@ -59,9 +59,9 @@ public class DexcomAPIHelper {
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
-                .url("https://sandbox-api.dexcom.com/v2/users/self/egvs?startDate=2017-06-16T15:30:00&endDate=2017-06-16T15:45:00")
+                .url("https://sandbox-api.dexcom.com/v2/users/self/egvs?startDate=2022-06-16T15:30:00&endDate=2022-06-16T15:45:00")
                 .get()
-                .addHeader("authorization", "Bearer" + token)
+                .addHeader("authorization", "Bearer " + token)
                 .build();
 
         Response response = null;

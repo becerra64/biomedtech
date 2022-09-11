@@ -6,6 +6,17 @@ public class DexconAuthStructure {
         private long expiresIn;
         private String tokenType;
 
+        public DexconAuthStructure(String accessToken, String refreshToken, long expiresIn, String tokenType) {
+                super();
+                this.accessToken = accessToken;
+                this.refreshToken = refreshToken;
+                this.expiresIn = expiresIn;
+                this.tokenType = tokenType;
+        }
+
+        public DexconAuthStructure() {
+        }
+
         public String getAccessToken() { return accessToken; }
         public void setAccessToken(String value) { this.accessToken = value; }
 
