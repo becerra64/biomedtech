@@ -20,6 +20,8 @@ public class DashBoardActivity extends AppCompatActivity {
 
     List<GlucoseLevel> glucoseLevels = new ArrayList<>();
     DexcomAPIHelper dexcomAPIHelper = DexcomAPIHelper.getInstance();
+    Handler handler = new Handler();
+    Runnable runnable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,6 @@ public class DashBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dash_board);
         GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
         init(glucoseLevels);
-        generateLog();
     }
 
     public void init(List<GlucoseLevel> list){
@@ -38,15 +39,16 @@ public class DashBoardActivity extends AppCompatActivity {
         recyclerView.setAdapter(listAdapter);
     }
 
-    public void generateLog()
-    {
-        GlucoseLevel s = new ConsumeAPI().doInBackground(dexcomAPIHelper);
-        appendGlucoseLevel(s);
-    }
-
-    public void appendGlucoseLevel(GlucoseLevel gl)
-    {
-        glucoseLevels.add(gl);
+    @Override
+    protected void onResume() {
+        handler.postDelayed(runnable = new Runnable() {
+            @Override
+            public void run() {
+                handler.postDelayed(runnable, 1000 * 60 * 5);
+                glucoseLevels.add(new ConsumeAPI().doInBackground(dexcomAPIHelper));
+            }
+        }, 1000 * 60 * 5);
+        super.onResume();
     }
 
     private class ConsumeAPI extends AsyncTask<DexcomAPIHelper, Void, GlucoseLevel>
