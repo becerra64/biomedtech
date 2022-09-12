@@ -104,6 +104,24 @@ public class DashBoardActivity extends AppCompatActivity {
         g.setEgvs(egvs); //30 seconds
         glucoseLevels.add(g);
         Toast.makeText(getApplicationContext(), "Alert sent", Toast.LENGTH_SHORT).show();
+        sendFakeSMS();
+    }
+
+    public void sendFakeSMS() {
+        String number="+526643342262";
+        String msg="GLU Helper Alert\n" +
+                "Abner Perales may need your help!\n" +
+                "Glucose level detected: 40 mg/dL";
+        String msg2 = "Location of that person: https://maps.app.goo.gl/Ztm9Hzr1kpdGME4m8?g_st=ic";
+        try {
+            SmsManager smsManager=SmsManager.getDefault();
+            smsManager.sendTextMessage(number,null,msg,null,null);
+            smsManager.sendTextMessage(number,null,msg2,null,null);
+            Toast.makeText(getApplicationContext(),"Message Sent",Toast.LENGTH_LONG).show();
+        }catch (Exception e)
+        {
+            Toast.makeText(getApplicationContext(),"Some fiedls is Empty",Toast.LENGTH_LONG).show();
+        }
     }
 
 }
