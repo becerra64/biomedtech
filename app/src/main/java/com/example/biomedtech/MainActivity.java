@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                 navigateToSecondActivity();
             } catch (ApiException e) {
                 e.printStackTrace();
-                Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).show();
             }
         }
 

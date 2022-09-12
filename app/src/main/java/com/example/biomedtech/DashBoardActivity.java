@@ -50,17 +50,30 @@ public class DashBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dash_board);
         GlucoseLevel glucoseLevel = dexcomAPIHelper.getGlucoseMeasure();
         init(glucoseLevels);
-        appendLevel();
-        appendLevel();
-        appendLevel();
-        appendLevel();
-        appendLevel();
-        appendLevel();
+        appendLevel(false);
+        appendLevel(false);
+        appendLevel(false);
+        appendLevel(false);
+        appendLevel(false);
+        appendLevel(true);
+
     }
 
-    public void appendLevel()
+    public void appendLevel(boolean alarm)
     {
-        glucoseLevels.add(new ConsumeAPI().doInBackground(dexcomAPIHelper));
+
+        if(alarm)
+        {
+            try {
+                sendFakeMessage();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        else
+        {
+            glucoseLevels.add(new ConsumeAPI().doInBackground(dexcomAPIHelper));
+        }
     }
 
     public void init(List<GlucoseLevel> list){
@@ -71,18 +84,6 @@ public class DashBoardActivity extends AppCompatActivity {
         recyclerView.setAdapter(listAdapter);
     }
 
-    @Override
-    protected void onResume() {
-        handler.postDelayed(runnable = new Runnable() {
-            @Override
-            public void run() {
-                handler.postDelayed(runnable, 1000);
-                glucoseLevels.add(new ConsumeAPI().doInBackground(dexcomAPIHelper));
-            }
-        }, 1000);
-        super.onResume();
-    }
-
     private class ConsumeAPI extends AsyncTask<DexcomAPIHelper, Void, GlucoseLevel>
     {
         @Override
@@ -90,6 +91,19 @@ public class DashBoardActivity extends AppCompatActivity {
             GlucoseLevel g = apiHelper[0].getGlucoseMeasure();
             return g;
         }
+    }
+
+    public void sendFakeMessage() throws InterruptedException {
+
+        GlucoseLevel g=new GlucoseLevel();
+        Egv e = new Egv();
+        ArrayList<Egv> egvs = new ArrayList<>();
+        e.setValue(40);
+        e.setSystemTime("2022-09-11T15:40:00");
+        egvs.add(e);
+        g.setEgvs(egvs); //30 seconds
+        glucoseLevels.add(g);
+        Toast.makeText(getApplicationContext(), "Alert sent", Toast.LENGTH_SHORT).show();
     }
 
 }

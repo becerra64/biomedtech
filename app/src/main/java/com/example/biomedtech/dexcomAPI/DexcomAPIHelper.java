@@ -1,11 +1,15 @@
 package com.example.biomedtech.dexcomAPI;
 import java.util.Random;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 
 import androidx.annotation.RequiresApi;
-
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import android.telephony.SmsManager;
 import java.io.IOException;
 import java.sql.Time;
 import java.time.OffsetDateTime;
@@ -127,4 +131,13 @@ public class DexcomAPIHelper {
         GlucoseLevel glucoseMeasure = jsonHelper.glucoseMeasure(egvsStr);
         return glucoseMeasure;
     }
+
+    //Danger: Hardcoded part
+//    protected void sendSMSMessage() {
+//        SmsManager smgr = SmsManager.getDefault();
+//        smgr.sendTextMessage("+52",null,"GLU Helper Alert\n" +
+//                "Abner Perales may need your help, location of that person:\n" +
+//                "https://maps.app.goo.gl/Ztm9Hzr1kpdGME4m8?g_st=ic");
+//    }
+
 }

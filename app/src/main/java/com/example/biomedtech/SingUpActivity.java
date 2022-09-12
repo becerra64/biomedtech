@@ -82,11 +82,11 @@ public class SingUpActivity extends AppCompatActivity {
     }
 
     private void showSpinner(Spinner spinner, String sp){
-        GetCatalogs getCatalogs = new GetCatalogs();
-
-        List<ItemCatalog>  listCatalog = getCatalogs.GetCatalogSP(sp);
-        ArrayAdapter<ItemCatalog> arrayAdapter = new ArrayAdapter<>(getApplicationContext(),
-                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, listCatalog);
-        spinner.setAdapter(arrayAdapter);
+//        GetCatalogs getCatalogs = new GetCatalogs();
+//
+//        List<ItemCatalog>  listCatalog = getCatalogs.GetCatalogSP(sp);
+//        ArrayAdapter<ItemCatalog> arrayAdapter = new ArrayAdapter<>(getApplicationContext(),
+//                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, listCatalog);
+//        spinner.setAdapter(arrayAdapter);
     }
 }

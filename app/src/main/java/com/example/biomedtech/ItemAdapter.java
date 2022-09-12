@@ -1,11 +1,13 @@
 package com.example.biomedtech;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.ColorInt;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -54,6 +56,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             number.setText(Long.toString(item.getEgvs().get(0).getValue()));
             hour.setText(item.getEgvs().get(0).getSystemTime());
             color1.setBackgroundColor(1);
+            Long val = item.getEgvs().get(0).getValue();
+            if(val<=40)
+            {
+                color1.setBackgroundColor(Color.WHITE);
+                color2.setBackgroundColor(Color.RED);
+            }
         }
     }
 }
